@@ -1,0 +1,341 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API-Flow Swagger Conversion",
+    "version": "0.0.0"
+  },
+  "host": "it2810-02.idi.ntnu.no:2000",
+  "paths": {
+    "/api/articles/all": {
+      "get": {
+        "summary": "Retrieve all articles ",
+        "description": "This route will return a list of all articles that is stored in the database. This route is resticted to loged in users.",
+        "operationId": "44673f6d-b6c3-481e-b9cf-d4deb6ecca8a",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": false,
+            "in": "header",
+            "default": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZlM2E1M2NjOGFiNTExZGY4NzRkY2UiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc2Mjc5MDk3LCJleHAiOjE0NzYyODkxNzd9.PotadTqhhwSjh5zpZFrwZ6m8yFvlyPCvFGZJ9qHTT30",
+            "type": "string",
+            "enum": [
+              "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZlM2E1M2NjOGFiNTExZGY4NzRkY2UiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc2Mjc5MDk3LCJleHAiOjE0NzYyODkxNzd9.PotadTqhhwSjh5zpZFrwZ6m8yFvlyPCvFGZJ9qHTT30"
+            ],
+            "x-title": "Authorization"
+          },
+          {
+            "name": "email",
+            "required": false,
+            "in": "formData",
+            "default": "mariusomoe@gmail.com",
+            "type": "string",
+            "enum": [
+              "mariusomoe@gmail.com"
+            ],
+            "x-title": "email"
+          },
+          {
+            "name": "password",
+            "required": false,
+            "in": "formData",
+            "default": "test",
+            "type": "string",
+            "enum": [
+              "test"
+            ],
+            "x-title": "password"
+          },
+          {
+            "name": "firstName",
+            "required": false,
+            "in": "formData",
+            "default": "Lars",
+            "type": "string",
+            "enum": [
+              "Lars"
+            ],
+            "x-title": "firstName"
+          },
+          {
+            "name": "lastName",
+            "required": false,
+            "in": "formData",
+            "default": "skaugvoll",
+            "type": "string",
+            "enum": [
+              "skaugvoll"
+            ],
+            "x-title": "lastName"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "stub description for swagger compliance"
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "summary": "Register a new user",
+        "description": "Register a user. This user will have \"Member\" rights.",
+        "operationId": "805e8659-c478-4e1d-89c8-fad2af491149",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "required": false,
+            "in": "formData",
+            "default": "mariusomoe@gmail.com",
+            "type": "string",
+            "enum": [
+              "mariusomoe@gmail.com"
+            ],
+            "x-title": "email"
+          },
+          {
+            "name": "password",
+            "required": false,
+            "in": "formData",
+            "default": "test",
+            "type": "string",
+            "enum": [
+              "test"
+            ],
+            "x-title": "password"
+          },
+          {
+            "name": "firstName",
+            "required": false,
+            "in": "formData",
+            "default": "Lars",
+            "type": "string",
+            "enum": [
+              "Lars"
+            ],
+            "x-title": "firstName"
+          },
+          {
+            "name": "lastName",
+            "required": false,
+            "in": "formData",
+            "default": "skaugvoll",
+            "type": "string",
+            "enum": [
+              "skaugvoll"
+            ],
+            "x-title": "lastName"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "stub description for swagger compliance"
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "summary": "Login an existing user",
+        "description": "This route returns a JWT and the user that atempted to login.",
+        "operationId": "72e80463-bb6e-404f-b356-f4c8621ad12a",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "required": false,
+            "in": "formData",
+            "default": "mariusomoe@gmail.com",
+            "type": "string",
+            "enum": [
+              "mariusomoe@gmail.com"
+            ],
+            "x-title": "email"
+          },
+          {
+            "name": "password",
+            "required": false,
+            "in": "formData",
+            "default": "test",
+            "type": "string",
+            "enum": [
+              "test"
+            ],
+            "x-title": "password"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "stub description for swagger compliance"
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/auth/test_auth_route": {
+      "get": {
+        "summary": "Authentication test route",
+        "description": "This route will return a JWT, the user that is loged in and a short text. This route is resticted to loged in users. ",
+        "operationId": "1c136147-009a-4751-9b08-ee773bc4f929",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "required": false,
+            "in": "formData",
+            "default": "mariusomoe@gmail.com",
+            "type": "string",
+            "enum": [
+              "mariusomoe@gmail.com"
+            ],
+            "x-title": "email"
+          },
+          {
+            "name": "password",
+            "required": false,
+            "in": "formData",
+            "default": "test",
+            "type": "string",
+            "enum": [
+              "test"
+            ],
+            "x-title": "password"
+          },
+          {
+            "name": "firstName",
+            "required": false,
+            "in": "formData",
+            "default": "Lars",
+            "type": "string",
+            "enum": [
+              "Lars"
+            ],
+            "x-title": "firstName"
+          },
+          {
+            "name": "lastName",
+            "required": false,
+            "in": "formData",
+            "default": "skaugvoll",
+            "type": "string",
+            "enum": [
+              "skaugvoll"
+            ],
+            "x-title": "lastName"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "stub description for swagger compliance"
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/auth/confirm_account/:confirmation_string": {
+      "get": {
+        "summary": "Confirm account",
+        "description": "Simply following this link with the provided param will activate the corresponding user. ",
+        "operationId": "099e2337-ae5e-449c-8062-555fa53f6686",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "required": false,
+            "in": "formData",
+            "default": "mariusomoe@gmail.com",
+            "type": "string",
+            "enum": [
+              "mariusomoe@gmail.com"
+            ],
+            "x-title": "email"
+          },
+          {
+            "name": "password",
+            "required": false,
+            "in": "formData",
+            "default": "test",
+            "type": "string",
+            "enum": [
+              "test"
+            ],
+            "x-title": "password"
+          },
+          {
+            "name": "firstName",
+            "required": false,
+            "in": "formData",
+            "default": "Lars",
+            "type": "string",
+            "enum": [
+              "Lars"
+            ],
+            "x-title": "firstName"
+          },
+          {
+            "name": "lastName",
+            "required": false,
+            "in": "formData",
+            "default": "skaugvoll",
+            "type": "string",
+            "enum": [
+              "skaugvoll"
+            ],
+            "x-title": "lastName"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "stub description for swagger compliance"
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/auth//request_new_email_confirmation": {
+      "post": {
+        "summary": "Request new confirmation link",
+        "description": "This route will send a new email with a new confirmation link to the user withe the provided email address.",
+        "operationId": "9468f5ef-585d-43e0-967d-510d60220d18",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "mariusomoe@gmail.com",
+            "required": false,
+            "in": "formData",
+            "type": "string",
+            "enum": [
+              ""
+            ],
+            "x-title": "mariusomoe@gmail.com"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "stub description for swagger compliance"
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {}
+}
