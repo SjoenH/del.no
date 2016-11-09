@@ -1,0 +1,11 @@
+{
+  "generator-openapi-repo": {
+    "importExistingSpec": true,
+    "importedSpec": "/Users/henry/git/del.no/swagger.json",
+    "name": "Del Nu",
+    "repo": "SjoenH/del.no",
+    "splitSpec": true,
+    "samples": true,
+    "installSwaggerUI": true
+  }
+}
