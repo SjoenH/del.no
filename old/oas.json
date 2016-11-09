@@ -1,0 +1,263 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "del-api",
+        "description": ""
+    },
+    "host": "it2810-02.idi.ntnu.no:2000",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/auth/register": {
+            "post": {
+                "operationId": "POST_api-auth-register",
+                "summary": "Register a new user",
+                "tags": [
+                    "Auth"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "mariusomoe@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "test"
+                    },
+                    {
+                        "name": "firstName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "Lars"
+                    },
+                    {
+                        "name": "lastName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "skaugvoll"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "operationId": "POST_api-auth-login",
+                "summary": "Login an existing user",
+                "tags": [
+                    "Auth"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "mariusomoe@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "test"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/api/auth/confirm_account/:confirmation_string": {
+            "get": {
+                "operationId": "GET_api-auth-confirm_account-:confirmation_string",
+                "summary": "Confirm account",
+                "tags": [
+                    "Auth"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "mariusomoe@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "test"
+                    },
+                    {
+                        "name": "firstName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "Lars"
+                    },
+                    {
+                        "name": "lastName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "skaugvoll"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/auth/test_auth_route": {
+            "get": {
+                "operationId": "GET_auth-test_auth_route",
+                "summary": "Authentication test route",
+                "tags": [
+                    "Auth"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "mariusomoe@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "test"
+                    },
+                    {
+                        "name": "firstName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "Lars"
+                    },
+                    {
+                        "name": "lastName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "skaugvoll"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": false,
+                        "type": "string",
+                        "default": " JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZjYjZhZmY0OGUwNDE5ODcxM2RkNWMiLCJmaXJzdE5hbWUiOiJMYXJzIiwibGFzdE5hbWUiOiJza2F1Z3ZvbGwiLCJlbWFpbCI6Im1hcml1c29tb2VAZ21haWwuY29tIiwicm9sZSI6Ik1lbWJlciIsImlhdCI6MTQ3NjE3OTY4MiwiZXhwIjoxNDc2MTg5NzYyfQ.j66qQud7PFGfVplL80Cha4ZNWyBZNuVq2NKG-7d7gGc"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/api/auth/request_new_email_confirmation": {
+            "post": {
+                "operationId": "POST_api-auth-request_new_email_confirmation",
+                "summary": "Request new confirmation link",
+                "tags": [
+                    "Auth"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "mariusomoe@gmail.com"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {}
+                    }
+                }
+            }
+        },
+        "/api/articles/all": {
+            "get": {
+                "operationId": "GET_api-articles-all",
+                "summary": "Retrieve all articles",
+                "tags": [
+                    "Article"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "mariusomoe@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "test"
+                    },
+                    {
+                        "name": "firstName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "Lars"
+                    },
+                    {
+                        "name": "lastName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "skaugvoll"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": false,
+                        "type": "string",
+                        "default": " JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZkNDFhZmNmMzJkNDE5YmIxODIzYjQiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc2MjE1MjM1LCJleHAiOjE0NzYyMjUzMTV9.0-2OhRQrmVRZxi3yJSwNz67quu1u0tSrrk2L5Hpyb7Y"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {}
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}

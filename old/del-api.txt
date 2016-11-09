@@ -1,0 +1,53 @@
+GET /auth/test_auth_route HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization:  JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZjYjZhZmY0OGUwNDE5ODcxM2RkNWMiLCJmaXJzdE5hbWUiOiJMYXJzIiwibGFzdE5hbWUiOiJza2F1Z3ZvbGwiLCJlbWFpbCI6Im1hcml1c29tb2VAZ21haWwuY29tIiwicm9sZSI6Ik1lbWJlciIsImlhdCI6MTQ3NjE3OTY4MiwiZXhwIjoxNDc2MTg5NzYyfQ.j66qQud7PFGfVplL80Cha4ZNWyBZNuVq2NKG-7d7gGc
+Host: it2810-02.idi.ntnu.no:2000
+Connection: close
+User-Agent: Paw/3.0.12 (Macintosh; OS X/10.11.6) GCDHTTPRequest
+
+
+
+POST /api/auth/register HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Host: it2810-02.idi.ntnu.no:2000
+Connection: close
+User-Agent: Paw/3.0.12 (Macintosh; OS X/10.11.6) GCDHTTPRequest
+Content-Length: 76
+
+email=mariusomoe%40gmail.com&password=test&firstName=Lars&lastName=skaugvoll
+
+POST /api/auth/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Host: it2810-02.idi.ntnu.no:2000
+Connection: close
+User-Agent: Paw/3.0.12 (Macintosh; OS X/10.11.6) GCDHTTPRequest
+Content-Length: 42
+
+email=mariusomoe%40gmail.com&password=test
+
+GET /api/auth/confirm_account/:confirmation_string HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Host: it2810-02.idi.ntnu.no:2000
+Connection: close
+User-Agent: Paw/3.0.12 (Macintosh; OS X/10.11.6) GCDHTTPRequest
+
+
+
+POST /api/auth/request_new_email_confirmation HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Host: it2810-02.idi.ntnu.no:2000
+Connection: close
+User-Agent: Paw/3.0.12 (Macintosh; OS X/10.11.6) GCDHTTPRequest
+Content-Length: 28
+
+email=mariusomoe%40gmail.com
+
+GET /api/articles/all HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization:  JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZkNDFhZmNmMzJkNDE5YmIxODIzYjQiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc2MjE1MjM1LCJleHAiOjE0NzYyMjUzMTV9.0-2OhRQrmVRZxi3yJSwNz67quu1u0tSrrk2L5Hpyb7Y
+Host: it2810-02.idi.ntnu.no:2000
+Connection: close
+User-Agent: Paw/3.0.12 (Macintosh; OS X/10.11.6) GCDHTTPRequest
+
+
+

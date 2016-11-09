@@ -1,0 +1,75 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API-Flow Swagger Conversion",
+    "version": "0.0.0"
+  },
+  "host": "it2810-02.idi.ntnu.no:2000",
+  "paths": {
+    "/api/auth/confirm_account/:confirmation_string": {
+      "get": {
+        "summary": "Confirm account",
+        "operationId": "f84b7ef0-a47f-4b08-ae03-fbc5335e0b9a",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "required": false,
+            "in": "formData",
+            "default": "mariusomoe@gmail.com",
+            "type": "string",
+            "enum": [
+              "mariusomoe@gmail.com"
+            ],
+            "x-title": "email"
+          },
+          {
+            "name": "password",
+            "required": false,
+            "in": "formData",
+            "default": "test",
+            "type": "string",
+            "enum": [
+              "test"
+            ],
+            "x-title": "password"
+          },
+          {
+            "name": "firstName",
+            "required": false,
+            "in": "formData",
+            "default": "Lars",
+            "type": "string",
+            "enum": [
+              "Lars"
+            ],
+            "x-title": "firstName"
+          },
+          {
+            "name": "lastName",
+            "required": false,
+            "in": "formData",
+            "default": "skaugvoll",
+            "type": "string",
+            "enum": [
+              "skaugvoll"
+            ],
+            "x-title": "lastName"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "stub description for swagger compliance"
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {}
+}

@@ -1,0 +1,556 @@
+{
+	"variables": [],
+	"info": {
+		"name": "delnu-api ",
+		"_postman_id": "fe9f6472-87d0-bbf2-9859-99e7c054e4c7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Article",
+			"description": "Article routes",
+			"item": [
+				{
+					"name": "Retrieve all articles ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/articles/all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZkNDFhZmNmMzJkNDE5YmIxODIzYjQiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc2MjE1MjM1LCJleHAiOjE0NzYyMjUzMTV9.0-2OhRQrmVRZxi3yJSwNz67quu1u0tSrrk2L5Hpyb7Y",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mariusomoe@gmail.com",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "firstName",
+									"value": "Lars",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "lastName",
+									"value": "skaugvoll",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": "This route will return a list of all articles that is stored in the database. This route is resticted to loged in users."
+					},
+					"response": []
+				},
+				{
+					"name": "Recently viewed ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/articles/recently_viewed",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODE5ZmExOWMyN2Q3NzIwZDM5NDViYTMiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc4MDk3NDk2LCJleHAiOjE0NzgxMDc1NzZ9.VXKIxkk-n6o_JYYCZGAcZocfXyr0qOEDHaKxLsq-GtA",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"marius@test.no\"\n}"
+						},
+						"description": "Returns the three most recently viewed articles of this user"
+					},
+					"response": []
+				},
+				{
+					"name": "Add article ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/articles/add_article",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODEyMzczNzk5YWYyOTZmY2E5N2MzYWYiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc3NTg4ODA0LCJleHAiOjE0Nzc1OTg4ODR9.mlg3j6aZQquC-q4P9eEzJksILLmXweYmXNDbxtf_7_0",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n\t\"name\": \"drill\",\n\t\"intro\":  \"stor og fin drill\",\n\t\"txt\": \"Denne drillen kan en drille hele dagen med baade paa jobb og andre steder\",\n\t\"price\": 22,\n\t\"imgLink\": [\"http://www.clasohlson.com/medias/sys_master/8885964701726.jpg\"],\n\t\"tags\": [\"megatag\", \"endaentag\"],\n\t\"_owner\": \"324657543\",\n\t\"fromDate\": \"2012-04-23T18:25:43.511Z\",\n\t\"toDate\": \"2012-04-23T18:25:43.511Z\",\n\t\"active\": true,\n\t\"location\": {\n\t  \"lat\": 63.4,\n\t  \"lng\": 10.4\n\t}\n}\n"
+						},
+						"description": "Add one new article with this user as owner"
+					},
+					"response": []
+				},
+				{
+					"name": "Upload article images ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/articles/upload_article_images",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODE5ZmExOWMyN2Q3NzIwZDM5NDViYTMiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc4MDk3NDk2LCJleHAiOjE0NzgxMDc1NzZ9.VXKIxkk-n6o_JYYCZGAcZocfXyr0qOEDHaKxLsq-GtA",
+								"description": ""
+							},
+							{
+								"key": "//Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Add upto four images. This route is not testable."
+					},
+					"response": []
+				},
+				{
+					"name": "Get one article by ID ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/articles/byid",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODE5ZmExOWMyN2Q3NzIwZDM5NDViYTMiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc4MDk3NDk2LCJleHAiOjE0NzgxMDc1NzZ9.VXKIxkk-n6o_JYYCZGAcZocfXyr0qOEDHaKxLsq-GtA",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "search",
+								"value": "params",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"marius@test.no\"\n}"
+						},
+						"description": "Get one article with the given ID. Need to bee sent to server so we can maintain recently viewed articles and have bookmark functionality. "
+					},
+					"response": []
+				},
+				{
+					"name": "Filtered search ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/articles/filtered",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODE5ZmExOWMyN2Q3NzIwZDM5NDViYTMiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc4MDk3NDk2LCJleHAiOjE0NzgxMDc1NzZ9.VXKIxkk-n6o_JYYCZGAcZocfXyr0qOEDHaKxLsq-GtA",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "search",
+								"value": "params",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"marius@test.no\"\n}"
+						},
+						"description": "Search articles.\n\nsearch params contain - filterOptions, fromIndex and sorting method."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"description": "Authentication routes",
+			"item": [
+				{
+					"name": "Register a new user",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/register",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mariusomoe@gmail.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Lars",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "skaugvoll",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Register a user. This user will have \"Member\" rights."
+					},
+					"response": []
+				},
+				{
+					"name": "Login an existing user",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/login",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mariusomoe@gmail.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "This route returns a JWT and the user that atempted to login."
+					},
+					"response": [
+						{
+							"name": "JWT and user",
+							"originalRequest": {
+								"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/login",
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "mariusomoe@gmail.com",
+											"type": "text",
+											"enabled": true
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "text",
+											"enabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Access-Control-Allow-Credentials",
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"name": "Access-Control-Allow-Headers",
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"name": "Access-Control-Allow-Methods",
+									"key": "Access-Control-Allow-Methods",
+									"value": "PUT, GET, POST, DELETE, OPTIONS",
+									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+								},
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "496",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 20 Oct 2016 09:46:32 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "ETag",
+									"key": "ETag",
+									"value": "W/\"1f0-6U3lg5EF+cCFA9Kn7o91fw\"",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "Express",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 665,
+							"body": "{\n    \"token\": \"JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODA4OTE1MDZlOGU5YjY3NTE3ZjMyYzQiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc2OTU2NzkyLCJleHAiOjE0NzY5NjY4NzJ9.kITwfRVC8DsQWZN2OLdRTmxL2KyVAtjJUzxUFflfa94\",\n    \"user\": {\n        \"_id\": \"580891506e8e9b67517f32c4\",\n        \"firstName\": \"Marius\",\n        \"lastName\": \"Moe\",\n        \"email\": \"mariusomoe@gmail.com\",\n        \"role\": \"Member\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Authentication test route",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/test_auth_route",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1N2ZjYjZhZmY0OGUwNDE5ODcxM2RkNWMiLCJmaXJzdE5hbWUiOiJMYXJzIiwibGFzdE5hbWUiOiJza2F1Z3ZvbGwiLCJlbWFpbCI6Im1hcml1c29tb2VAZ21haWwuY29tIiwicm9sZSI6Ik1lbWJlciIsImlhdCI6MTQ3NjE3OTY4MiwiZXhwIjoxNDc2MTg5NzYyfQ.j66qQud7PFGfVplL80Cha4ZNWyBZNuVq2NKG-7d7gGc",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mariusomoe@gmail.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Lars",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "lastName",
+									"value": "skaugvoll",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": "This route will return a JWT, the user that is loged in and a short text. This route is resticted to loged in users. "
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm account",
+					"request": {
+						"url": {
+							"raw": "http://it2810-02.idi.ntnu.no:2000/api/auth/confirm_account/:confirmation_string",
+							"protocol": "http",
+							"auth": {},
+							"host": [
+								"it2810-02",
+								"idi",
+								"ntnu",
+								"no"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"auth",
+								"confirm_account",
+								":confirmation_string"
+							],
+							"variable": [
+								{
+									"value": "",
+									"id": "confirmation_string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mariusomoe@gmail.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Lars",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "lastName",
+									"value": "skaugvoll",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": "Simply following this link with the provided param will activate the corresponding user. "
+					},
+					"response": []
+				},
+				{
+					"name": "Request new confirmation link",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/request_new_email_confirmation",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mariusomoe@gmail.com",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "This route will send a new email with a new confirmation link to the user withe the provided email address."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete my account",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/delete_my_account",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODA2NWU5YThiODZmODE5NGM5NTU5NjQiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc2ODEyNDU2LCJleHAiOjE0NzY4MjI1MzZ9.G0UuWG5lZt0NPB7wkby4EflvaZHyBs-bjdobf_6C35o",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"description": "This will delete your account. The user to be deleted is determined by the JWT."
+					},
+					"response": []
+				},
+				{
+					"name": "Change email ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/change_email",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODEzNTJjMTE2N2IzYTEyMDBiY2RlYTYiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc3NjYxMzg0LCJleHAiOjE0Nzc2NzE0NjR9.XZ4EUAkKBuB4rif50Ws9rnNmxNlNDtBb3kWFoyTvB1A",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"marius@test.no\"\n}"
+						},
+						"description": "Change email - need to be loged in."
+					},
+					"response": []
+				},
+				{
+					"name": "Ask for new token ",
+					"request": {
+						"url": "http://it2810-02.idi.ntnu.no:2000/api/auth/get_new_token",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ODE5ZmExOWMyN2Q3NzIwZDM5NDViYTMiLCJmaXJzdE5hbWUiOiJNYXJpdXMiLCJsYXN0TmFtZSI6Ik1vZSIsImVtYWlsIjoibWFyaXVzb21vZUBnbWFpbC5jb20iLCJyb2xlIjoiTWVtYmVyIiwiaWF0IjoxNDc4MDk3NDk2LCJleHAiOjE0NzgxMDc1NzZ9.VXKIxkk-n6o_JYYCZGAcZocfXyr0qOEDHaKxLsq-GtA",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"marius@test.no\"\n}"
+						},
+						"description": "Ask for new token. If the token is about to expire and the user is still active a request for a fresh token will be issued. It uses the soon to be too old token as credentials."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
